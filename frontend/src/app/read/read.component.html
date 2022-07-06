@@ -1,0 +1,23 @@
+<div class="container mt-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let us of readData'>
+        <th scope="row">{{us.id}}</th>
+        <td>{{us.name}}</td>
+        <td>{{us.email}}</td>
+        <td>{{us.mobile}}</td>
+        <td><button (click)="deleteId(us.id)" class="btn btn-primary btn-danger">Delete</button> 
+        &nbsp;<a [routerLink]="['/create',us.id]"  class="btn btn-primary btn-success">Update</a> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
